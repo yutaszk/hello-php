@@ -7,7 +7,7 @@ services:
     volumes:
       - .mysql:/var/lib/mysql
   php:
-    image: php:7
+    image: richarvey/nginx-php-fpm
     depends_on:
       - mysql
     expose:
@@ -17,4 +17,3 @@ services:
     volumes:
       - .:/var/www/html
     working_dir: /var/www/html
-    command: php -S 0.0.0.0:80
